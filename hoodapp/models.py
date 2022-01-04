@@ -42,3 +42,28 @@ class NeighborHood(models.Model):
         return hood
     def __str__(self):
         return self.name
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_photo = CloudinaryField("image")
+    bio = models.TextField(max_length=300)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE,null=True)
+    neighborhood = models.ForeignKey(NeighborHood, on_delete=models.CASCADE,null=True)
+    contact = models.CharField(max_length=100)
+    created_on = models.DateTimeField(auto_now_add=True,null=True)
+    updated_on = models.DateTimeField(auto_now=True,null=True)
+    def save_profile(self):
+        self.save()
+    def create_profile(self):
+        self.save()
+    def update_profile(self):
+        self.save()
+    def delete_profile(self):
+        self.delete()
+    @classmethod
+    def filter_by_id(cls, id):
+        profile = Profile.objects.filter(user=id).first()
+        return profile
+    def __str__(self):
+        return self.user.username
