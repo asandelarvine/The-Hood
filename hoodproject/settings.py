@@ -16,7 +16,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import django_heroku
-from pathlib import path
+
 
 
 
@@ -38,7 +38,7 @@ SECRET_KEY = 'qm0bvu9gxh=6^^5lr02+1pt#3+w)_4mk#v$tzpy2@(zbk@nw3!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [""]
 
 # cloudinary
 cloudinary.config(
