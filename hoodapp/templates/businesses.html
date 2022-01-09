@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 top-div" style="margin-top:40px;"></div>
+  </div>
+
+  <div class="text-center">
+    <h1 style="font-family: 'Joti One'; text-align: center; color:white" >Business</h1>
+
+    <a href="{% url 'new_business' %}" >
+        <button class="btn btn-primary" style="height:50px;  margin-top: -6px; font-family: 'Joti One'; text-align: center">Register Business</button>
+    </a>
+  </div>
+
+<div class="row">
+  {% for business in businesses %}
+  <div class="col-md-6">
+  <div class="card" style="width: 20rem;margin-top:10px;">
+    
+  <div class="card-body">
+   
+      <h3 class="card-title" data-toggle="modal" data-target="#{{business.id}}">{{business.name|truncatechars:19}}</h3>
+
+      <img class="card-img-top" src="{{business.logo.url}}" height=200 width=100 >
+
+        <p><span style="font-weight:bold;">User:</span> {{business.user}}</p>
+        <p><span style="font-weight:bold;">Content:</span> {{business.content|safe}}</p>
+  
+        <h4 class="text-center">Contacts</h4>
+        <p><span class="bold">Phone Number:</span> {{business.contact}}</p>
+        <p><span class="bold">Address:</span> {{business.address}}</p>
+        <p><span class="bold">Email:</span> {{business.email}}</p>
+    
+  </div>
+</div>
+</div>
+
+
+
+
+{% endfor %}
+</div>
+
+</div>
+<style>
+.bold{
+  font-weight: bold;
+}
+.container{
+  background-color: crimson;
+}
+</style>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .image{
+        height: auto;
+        width: 100%;
+    }
+    .hood{
+        margin-top: 5%;
+    }
+</style>
+<div class="container hood">
+      <div class="business">
+          <div class="row">
+            <div class="col-md-6">
+                <img src="{{business.photo.url}}"class="image">
+            </div>
+            <div class="col-md-6">
+                <p>Business_Name: {{hood.name}}</p>
+                <p>Business_Description: {{hood.content}}</p>
+                <p>Business_Count: {{hood.occupants_count}}</p>
+                <p>Business_Location: {{ hood.location }}</p>
+                <p>Date Created: {{ hood.created_on|date }}</p>
+                <p>Date Updated: {{ hood.updated_on|date}}</p>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
+
+
+    button:hover,
+    a:hover {
+        opacity: 0.7;
+    }
+</style>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12 top-div" style="margin-top:40px;">
+            <h1 style="font-family: 'Joti One'; text-align:center;">Posts</h1>
+        </div>
+    </div>
+    {% for post in posts %}
+    <div class="col-md-4">
+
+        <div class="card">
+            <img src="{{ post.image.url }}" alt="post" style="width:100%; height:100%">
+            <h4 style="font-family: 'Joti One'">{{post.title}}</h4>
+            {{post.content}}
+            <p class="title">{{post.category}}</p>
+            <p>{{post.neighborhood}}</p>
+            <p>Posted on :<strong>{{ post.created_at|date }}</strong> by <strong>{{post.user}}</strong></p>
+<br>
+<br>
+        </div>
+    </div>
+    {%endfor%}
+
+
+
+
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .container {
+            background-color: crimson;
+        }
+    </style>
+</div>
+
+{%endblock%}
