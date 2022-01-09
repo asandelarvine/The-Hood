@@ -1,8 +1,42 @@
 {%extends "base.html"%}
 {% load bootstrap4 %}
 {% block content %}
-<div class="container">
-    <h1>My Hood</h1>
+<div class="container-fluid background text-center">
+    <h1 class="font-weight-bold text-center intro" style="font-family: 'Joti One'" >WELCOME TO </h1>
+    <h1 class="hood" style="font-family: 'Joti One'">MY HOOD</h1>
 </div>
+
+
+
+<style>
+body{
+    background-image:url(../static/images/appartment1.png);
+    background-size: cover;
+}
+
+</style>
+
+<div class="container mt-5 mb-3">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h1 class="font-weight-bold hoodapp">Get the most out of your neighborhood with HoodApp</h1>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <p class="community">
+                It's where communities come together to greet newcomers, 
+                exchange recommendations, and read the latest local news. 
+                Where neighbors support local businesses and get updates from public agencies. 
+                Where neighbors borrow tools and sell couches. It's how to get the most out of 
+                everything nearby. Welcome, neighbor.
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
+
 
 {% endblock %}
