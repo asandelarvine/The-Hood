@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% block content %}
+{{block.super}}
+<style>
+    .image {
+        height: auto;
+        width: 100%;
+    }
+
+    .hood {
+        margin-top: 10%;
+    }
+    
+</style>
+<div class="container hood">
+    <div class="row">
+        <!-- <h1 style="font-family: 'Joti One'">Hoods</h1> -->
+
+        {% for hoods in hood %}
+        
+        <div class="col-md-6">
+            
+            <img src="{{hoods.photo.url}}" alt="" class="image">
+            <a href="{%url 'one_hood' hoods.name %}" style="font-family: 'Joti One'">
+                <p class="name" style="font-family: 'Joti One'">{{hoods.name}}</p>
+            </a>
+            <p >{{ hoods.location }}</p>
+            <p >{{ hoods.occupants_count }}</p>
+            <p>{{hoods.members.count}} Member{{hoods.members.count|pluralize}}</p>
+            <p style="font-family: 'Joti One'">{{ hoods.content }}</p>
+
+
+            {% if request.user.profile.neighborhood == hoods %}
+           
+                <a href="{% url 'leave_hood' hoods.id %}" class="btn btn-outline-danger btn-sm"
+                style="font-family: 'Joti One'">Leave
+                    at will</a>
+                <br>
+                <a href="{%url 'one_hood' hoods.name %}" class="btn btn-outline-success btn-sm"
+                style="font-family: 'Joti One'" >Explore {{hoods.name}}
+                </a>
+                {% elif not request.user.profile.neighborhood %}
+                <a href="{% url 'join_hood' hoods.id %}" class="btn btn-info btn-sm"style="font-family: 'Joti One'" >Join Hood</a>
+                {% endif %}
+            
+        </div>
+        {% endfor %}
+ </div>
+
+
+    
+
+
+</div>
+
+{% endblock %}
