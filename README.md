@@ -5,10 +5,24 @@ This is a neighborhood application which allows users to be connected to his or 
 This web-app allows a user to create a Profile, Join Neighborhood,See Posts and add Businesses alongside see other Businesses,Posts and Neighborhoods.
 
 
-### Setup/Installation Requirements
+### Installation and setup instructions
+
+1. Clone this repo: git clone https://github.com/asandelarvine/Awwards-Like-App
+2. The repo comes in a zipped or compressed format. Extract to your preferred location and open it.
+3. open your terminal and navigate to gallery then create a virtual environment.For detailed guide refer  [here](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
+3. To run the app, you'll have to run the following commands in your terminal
+    
+
+### LIVE LINK
 Live link : https://hood-2022.herokuapp.com/
 
-Pre-configured Admin details are: Password: myhoodpassword Username: MyHood
+## Admin Dashboard
+
+[Admin Dashboard Login]()  with credentials
+
+    username : `MyHood`
+
+    password : `myhoodpassword`
 
 ### Known Bugs
 Elements re-arrange themselves unequally on different screen sizes.
