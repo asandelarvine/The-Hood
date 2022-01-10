@@ -59,8 +59,11 @@ def hood(request):
 @login_required(login_url='/accounts/login/')
 def one_hood(request,name):
     hood = NeighborHood.objects.get(name=name)
-    return render(request,'one_hood.html',{'hood':hood}) 
+    businesses = Business.objects.filter(neighborhood=hood)
+    posts = Post.objects.filter(neighborhood=hood)
 
+    return render(request,'one_hood.html',{'hood':hood, 'businesses':businesses, 'posts':posts}) 
+    
 def join_hood(request,id):
     neighborhood = get_object_or_404(NeighborHood, id=id)
     
