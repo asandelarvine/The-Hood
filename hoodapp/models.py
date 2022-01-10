@@ -86,6 +86,13 @@ class Business(models.Model):
     address =models.CharField(max_length=100)
     contact = models.IntegerField()
 
+    
+    class Meta:
+        ordering = ['-pk']
+
+    def __str__(self):
+        return f'{self.name} Business'
+
     def new_business(self):
         self.save()
     def update_business(self):
@@ -107,8 +114,7 @@ class Business(models.Model):
 
     
 
-    def __str__(self):
-        return self.name
+    
 
 
 # Authorities
@@ -198,6 +204,12 @@ class Post(models.Model):
     neighborhood = models.ForeignKey(NeighborHood, on_delete=models.CASCADE, related_name='hood_post',null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['-pk']
+        
+    def __str__(self):
+        return f'{self.title} Post'
+
     def create_post(self):
         self.save()
 
@@ -207,9 +219,7 @@ class Post(models.Model):
     def update_post(self):
         self.update()
 
-    def __str__(self):
-        return self.title
-
+    
 
 
 # comment
