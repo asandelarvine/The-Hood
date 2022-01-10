@@ -8,13 +8,15 @@
     }
     
 
-    .hood {
+    .container-fluid {
         margin-top: 10%;
+        background-color:#0c3329;
+        color:white;
     }
     
 </style>
-<div class="container hood">
-    <h1 style="font-family: 'Joti One'; text-align: center; color:crimson" >Hoods</h1>
+<div class="container-fluid hood">
+    <h1 style="font-family: 'Joti One'; text-align: center; color:white;" >Hoods</h1>
 
     <div class="row">
         
@@ -22,12 +24,15 @@
         
         <div class="col-md-6">
             
-            <img src="{{hoods.photo.url}}" alt="" class="image">
+            
+            <a href="{%url 'one_hood' hoods.name %}" class="btn btn-outline-success btn-sm"
+            style="font-family: 'Joti One'" ><img src="{{hoods.photo.url}}" alt="" class="image">
+            </a>
             <a href="{%url 'one_hood' hoods.name %}" style="font-family: 'Joti One'">
                 <p class="name" style="font-family: 'Joti One'">{{hoods.name}}</p>
             </a>
             <p >{{ hoods.location }}</p>
-            <p >{{ hoods.occupants_count }}</p>
+            <p >Occupants Count: {{ hoods.occupants_count }}</p>
             <p>{{hoods.members.count}} Member{{hoods.members.count|pluralize}}</p>
             <p style="font-family: 'Joti One'">{{ hoods.content }}</p>
 
@@ -50,9 +55,5 @@
  </div>
 
 
-    
-
-
-</div>
-
 {% endblock %}
+</div>

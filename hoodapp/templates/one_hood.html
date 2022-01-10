@@ -9,14 +9,15 @@
         margin-top: 5%;
     }
 </style>
-<div class="container hood">
+<div class="container-fluid hood">
+  <h1 style="font-family: 'Joti One'; text-align: center; margin-bottom:20px;"> {{hood.name}}</h1>
       <div class="hoods">
           <div class="row">
             <div class="col-md-6">
                 <img src="{{hood.photo.url}}"class="image">
             </div>
             <div class="col-md-6">
-                <p style="font-family: 'Joti One'">Neighborhood_Name: {{hood.name}}</p>
+                
                 <p style="font-family: 'Joti One'">Neighborhood_Description: {{hood.content}}</p>
                 <p>Neighborhood_Count: {{hood.occupants_count}}</p>
                 <p style="font-family: 'Joti One'">Neighborhood_Location: {{ hood.location }}</p>
@@ -24,14 +25,64 @@
                 <p>Date Updated: {{ hood.updated_on|date}}</p>
             </div>
           </div>
+
+          <h2 class="mb-3 mt-3" style="font-family: 'Joti One'; text-align: center">Business in {{hood.name}}</h2>
+
+          {% for business in businesses %}
+  <div class="col-md-6">
+  <div class="card" style="width: 20rem;margin-top:10px;">
+    
+  <div class="card-body">
+   
+      <h3 class="card-title" data-toggle="modal" data-target="#{{business.id}}"  style="font-family: 'Joti One'">{{business.name|truncatechars:19}}</h3>
+
+      <img class="card-img-top" src="{{business.logo.url}}" height=200 width=100 >
+
+        <p><span style="font-weight:bold;">User:</span> {{business.user}}</p>
+        <p><span style="font-weight:bold;">Content:</span> {{business.content|safe}}</p>
+  
+        <h4 class="text-center">Contacts</h4>
+        <p><span class="bold">Phone Number:</span> {{business.contact}}</p>
+        <p><span class="bold">Address:</span> {{business.address}}</p>
+        <p><span class="bold">Email:</span> {{business.email}}</p>
+    
+  </div>
+</div>
+</div>
+
+
+
+
+{% endfor %}
+
+<h2 class="mb-3 mt-3"style="font-family: 'Joti One'; text-align:center">Posts In {{hood.name}}</h2>
+{% for post in posts %}
+<div class="col-md-4">
+
+
+    <div class="card">
+        <img src="{{ post.image.url }}" alt="post" style="width:100%; height:100%">
+        <h4 style="font-family: 'Joti One'">{{post.title}}</h4>
+        {{post.content}}
+        <p class="title">{{post.category}}</p>
+        <p>{{post.neighborhood}}</p>
+        <p>Posted on :<strong>{{ post.created_at|date }}</strong> by <strong>{{post.user}}</strong></p>
+<br>
+<br>
+    </div>
+</div>
+{%endfor%}
+
+
     </div>
 
     <style>
         .bold{
           font-weight: bold;
         }
-        .container{
-          background-color: crimson;
+        .container-fluid{
+          background-color: #0c3329;
+          color:black;
         }
         </style>
 </div>

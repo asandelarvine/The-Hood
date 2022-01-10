@@ -4,7 +4,7 @@
     body {
         font-family: 'Lato', global_font_string;
         font-weight: 500;
-        background-color: #595D64;
+        background-color: #0c3329;
         color: whitesmoke;
     }
     .card {
@@ -12,6 +12,8 @@
         text-align: left;
         border-radius: 10%;
     }
+    
+    
 </style>
 <br>
 <section class="profile container">
@@ -43,8 +45,8 @@
             <div class="col-md-6 text-center">
                 <div class="row">
                     <div class="col-md-4 details">
-                        <div class="first">
-                            <h3>Username: {{user.username}}</h3>
+                        <div class="first" >
+                            <h3 style="font-family: 'Joti One'" >Username: {{user.username}}</h3>
                             {% if request.user is user %} {% endif %}
                             <div>
                                 <a href="{%url 'update_profile' user.id %}"
@@ -52,6 +54,7 @@
                                     Edit Profile
                                 </a>
                             </div>
+                            <br>
 
                             <div>
                                 <a href="{%url 'new_business' %}"
@@ -59,12 +62,14 @@
                                     Create New Business 
                                 </a>
                             </div>
+                            <br>
                             <div>
                                 <a href="{%url 'create_authorities' %}"
                                     class="btn btn-outline-dark bg-dark text-white rounded-pill" style="font-family: 'Joti One'">
                                     Create New Authorities 
                                 </a>
                             </div>
+                            <br>
                             <div>
                                 <a href="{%url 'create_post' %}"
                                     class="btn btn-outline-dark bg-dark text-white rounded-pill" style="font-family: 'Joti One'">

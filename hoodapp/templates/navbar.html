@@ -1,16 +1,19 @@
 <!--Navbar-->
 <nav class="pl-5 pr-5 navbar navbar-expand-lg navbar-light sticky-top"
   style=" font-family: 'Joti One'; height: 15vh;background-color:black; ">
+  
 
   <!-- Navbar brand -->
   <!-- <img height="50"  src="/static/images/logo1.png" alt=""></a> -->
-  <!-- <a class="navbar-brand font-weight-bold title" href="{% url 'index' %}"style="font-size: 30px; font-weight:bold">AWWARDS</a> -->
+  <!-- <a class="navbar-brand font-weight-bold title" href="{% url 'index' %}"style="font-size: 30px; font-weight:bold">MY HOOD</a> -->
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="basicExampleNav">
@@ -24,7 +27,7 @@
         <ul class="dropdown-menu " role="menu" style=" text-decoration: none; ">
 
           <li class="" >
-            <a class="btn btn-default" href="{% url 'index' %}">Home</a>
+            <a class="btn btn-default" href="/">Home</a>
           </li>
           <li>
             <a class="btn btn-default" href="{% url 'hood' %}">Hood</a>
@@ -49,8 +52,11 @@
 
     </div>
 
+    
   </div>
 
+
+  
   <form id='search' role="search" action="" class="form-inline my-2 my-lg-0 animated fadeIn">
     <input required name='name' class="form-control mr-sm-2" type="search" placeholder="Search by name"
       aria-label="Search">
@@ -58,7 +64,7 @@
     </button>
   </form>
 
-  </div>
+  
 
 
   <div class="">

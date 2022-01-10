@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12 top-div" style="margin-top:40px;">
       <h1 style="color:white;text-align:center; font-family: 'Joti One'">Authorities</h1>
@@ -20,7 +20,7 @@
   <div class="col-md-6">
   <div class="card" style="width: 20rem;width: 25rem;margin-top:10px; ">
   <div class="card-body">
-      <h3 class="card-title" data-toggle="modal" data-target="#{{authority.id}}">{{authority.name}}</h3>
+      <h3 class="card-title" data-toggle="modal" data-target="#{{authority.id}}" style="font-family: 'Joti One'">{{authority.name}}</h3>
 
       <img class="card-img-top" src="{{authority.photo.url}}" height=200 width=100 >
 
@@ -45,9 +45,10 @@
   .bold{
     font-weight: bold;
   }
-  .container{
-    background-color: crimson;
-  }
+  .container-fluid{
+          background-color: #0c3329;
+          color:black;
+        }
   </style>
 
 </div>

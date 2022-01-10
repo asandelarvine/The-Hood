@@ -4,55 +4,62 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12 top-div" style="margin-top:40px;">
-      <h1 style="font-family: 'Joti One'">Health</h1>
-      <p style="text-align:center">Get best health care Services...</p>
+      <h1 style="font-family: 'Joti One'">Health Services</h1>
+      <h3 style="text-align:center">Get best health care Services...</h3>
     </div>
   </div>
 
-<div class="row">
+  <div class="row">
 
 
-  {% for healths in health %}
-  <div class="col-md-6">
-  <div class="card" style="width: 25rem;margin-top:10px;" >
-    <img class="card-img-top" src="{{healths.logo.url}}" height=200 width=100 >
+    {% for healths in health %}
+    <div class="col-md-6">
+      <div class="card" style="width: 25rem;margin-top:10px;">
+        <img class="card-img-top" src="{{healths.logo.url}}" height=200 width=100>
 
-  <div class="card-body">
-      <h3 class="card-title" data-toggle="modal" data-target="#{{health.id}}">{{healths.name}}</h3>
+        <div class="card-body">
+          <h3 class="card-title" data-toggle="modal" data-target="#{{health.id}}" style="font-family: 'Joti One'">
+            {{healths.name}}</h3>
 
-      <h4 class="text-center">Contacts</h4>
-        <p><span class="bold">Phone Number:</span> {{healths.contact}}</p>
-        <p><span class="bold">Address:</span> {{healths.address}}</p>
-        <p><span class="bold">Email:</span> {{healths.email}}</p>
+          <h4 class="text-center">Contacts</h4>
+          <p><span class="bold">Phone Number:</span> {{healths.contact}}</p>
+          <p><span class="bold">Address:</span> {{healths.address}}</p>
+          <p><span class="bold">Email:</span> {{healths.email}}</p>
+        </div>
+
+
       </div>
-
-
+    
   </div>
-</div>
-</div>
 
-{% endfor %}
+  {% endfor %}
+</div>
 </div>
 
 </div>
 
 <style>
-.bold{
-  font-weight: bold;
-}
-h3{
-  text-align: center;
-}
-h1{
-  color:white;
-  text-align:center;
-}
-.container{
-    background-color:crimson;
-}
+  .bold {
+    font-weight: bold;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  .container-fluid {
+    background-color: #0c3329;
+    color: black;
+
+  }
 </style>
 
 {% endblock %}
