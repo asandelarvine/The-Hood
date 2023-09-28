@@ -15,7 +15,7 @@ from decouple import config,Csv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-import django_heroku
+
 
 
 
@@ -36,14 +36,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [""]
+ALLOWED_HOSTS = ["*"]
 
 # cloudinary
+
 cloudinary.config(
     cloud_name = config('CD_NAME'),
-    api_key= config('CD_API'),
-    api_secret=config('CD_SECRET'),
-    secure = config('CD_SECURE')
+    api_key = config('CD_API'),
+    api_secret = config('CD_SECRET')
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -154,14 +154,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-# 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-
+# 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
+
