@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django_registration.backends.one_step.views import RegistrationView
 from django.contrib.auth import views
+# new
+from django.conf import settings  
+from django.conf.urls.static import static  
+from hoodproject import settings
 
 
 
@@ -29,3 +33,6 @@ urlpatterns = [
     path('logout/', views.logout_then_login, name='logout'),
     
 ]
+
+if settings.DEBUG:  
+        urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) 
